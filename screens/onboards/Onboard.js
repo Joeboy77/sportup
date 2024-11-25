@@ -7,6 +7,7 @@ import { COLORS } from '../../hooks/Colors'
 import GestureRecognizer from 'react-native-swipe-gestures'
 import DotIndicator from '../../components/onboard/DotIndicator'
 import { useNavigation } from '@react-navigation/native'
+import Button from '../../components/onboard/Button'
 
 const Onboard = () => {
 
@@ -43,6 +44,10 @@ const Onboard = () => {
             <DotIndicator activeIndex={activeIndex} totalDots={totalDots} />
         </View>
 
+        <View style={styles.buttons}>
+            <Button backgroundColor="#5B67F4" text="Sign In" />
+            <Button backgroundColor="" borderColor= {COLORS.PRIMARY_TEXT} borderWidth={1} text="Sign Up" />
+        </View>
 
     </ImageBackground>
     </GestureRecognizer>
@@ -78,5 +83,13 @@ const styles = StyleSheet.create({
         color: COLORS.SUB_PRIMARY,
         
     },
+    buttons: {
+        marginLeft: responsive.number(20),
+        marginTop: responsive.number(30),
+        display: 'flex',
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        marginRight: responsive.number(20)
+    }
 })
 export default Onboard
