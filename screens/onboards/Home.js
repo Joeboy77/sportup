@@ -4,26 +4,50 @@ import image1 from '../../assets/img/girl.png'
 import Logo from '../../assets/img/Logo.png'
 import { responsive } from '../../shared/getResponsiveness'
 import { COLORS } from '../../hooks/Colors'
-import GestureRecognizer from 'react-native-swipe-gestures'
+import GestureRecognizer, {swipeDirections} from 'react-native-swipe-gestures'
 import DotIndicator from '../../components/onboard/DotIndicator'
+import { useNavigation, useFocusEffect } from '@react-navigation/native';
+
 
 
 const Home = () => {
 
+    const navigation = useNavigation();
     const [activeIndex, setActiveIndex] = useState(0)
-    const totalDots = 2
+    
+    const screens = ['Home', 'Onboard'];
+
+    const config = {
+        velocityThreshold: 0.3,
+        directionalOffsetThreshold: 80
+    }
 
     const handleSwipeLeft = () => {
-        if(activeIndex < totalDots - 1) setActiveIndex(activeIndex + 1)
-    }
+        if (activeIndex < screens.length - 1) {
+          const nextIndex = activeIndex + 1;
+          setActiveIndex(nextIndex);
+          navigation.navigate(screens[nextIndex]);
+        }
+      };
+    
+      const handleSwipeRight = () => {
+        if (activeIndex > 0) {
+          const prevIndex = activeIndex - 1;
+          setActiveIndex(prevIndex);
+          navigation.navigate(screens[prevIndex]);
+        }
+      };
 
-    const handleSwipeRight = () => {
-        if(activeIndex > 0) setActiveIndex(activeIndex - 1)
-    }
+      useFocusEffect(
+        React.useCallback(() => {
+            setActiveIndex(0)
+        }, [])
+      )
   return (
     <GestureRecognizer
     onSwipeLeft={handleSwipeLeft}
     onSwipeRight={handleSwipeRight}
+    config={config}
     style= {styles.container}
     >
         <ImageBackground style={styles.container} source={image1}>
@@ -38,7 +62,7 @@ const Home = () => {
         </View>
 
         <View style={styles.dotIndicator}>
-            <DotIndicator activeIndex={activeIndex} totalDots={totalDots}/>
+            <DotIndicator activeIndex={activeIndex} totalDots={screens.length}/>
         </View>
         </ImageBackground>
     </GestureRecognizer>
