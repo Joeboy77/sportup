@@ -1,6 +1,8 @@
 import { View, Text, StyleSheet, TextInput } from 'react-native'
 import React, {useState} from 'react'
 import { responsive } from '../../shared/getResponsiveness'
+import ForgotPassword from '../../components/auth/ForgotPassword'
+import Button from '../../components/auth/Button'
 
 const SignIn = () => {
     const [email, setEmail] = useState('')
@@ -32,6 +34,10 @@ const SignIn = () => {
         secureTextEntry
         />
       </View>
+
+      <ForgotPassword />
+
+      <Button text="Sign In"/>
     </View>
   )
 }
