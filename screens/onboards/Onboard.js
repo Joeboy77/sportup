@@ -45,7 +45,7 @@ const Onboard = () => {
         </View>
 
         <View style={styles.buttons}>
-            <Button backgroundColor="#5B67F4" text="Sign In" />
+            <Button backgroundColor="#5B67F4" text="Sign In" onPress={() => navigation.navigate('SignIn')} />
             <Button backgroundColor="" borderColor= {COLORS.PRIMARY_TEXT} borderWidth={1} text="Sign Up" />
         </View>
 
