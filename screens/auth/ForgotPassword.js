@@ -3,9 +3,16 @@ import React, {useState} from 'react'
 import mail from '../../assets/img/mail.png'
 import { responsive } from '../../shared/getResponsiveness'
 import Button from '../../components/auth/Button'
+import { useNavigation } from '@react-navigation/native'
 
 export default function ForgotPassword() {
     const [email, setEmail] = useState('')
+
+    const navigation = useNavigation()
+
+    const handleClick = () => {
+        navigation.navigate('NewPassword')
+    }
   return (
     <View>
       <Image source={mail} style={styles.device}/>
@@ -23,7 +30,7 @@ export default function ForgotPassword() {
       />
 
       <View style={{marginTop: '25%'}}> 
-        <Button text="Verify"/>
+        <Button text="Verify" onPress={handleClick}/>
       </View>
     </View>
   )
