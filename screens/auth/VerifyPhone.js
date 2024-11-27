@@ -36,7 +36,7 @@ export default function VerifyPhone() {
         />
 
         <Verifier
-        onPress={() => setSelectedMethod('phone')}
+          onPress={() => setSelectedMethod('phone')}
           image={phone}
           title="Phone" 
           subTitle="phone number"  
