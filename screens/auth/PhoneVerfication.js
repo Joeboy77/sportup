@@ -35,7 +35,7 @@ export default function PhoneVerfication() {
       <Text style={{color: "blue", marginLeft: responsive.number(20), marginTop: responsive.number(20)}}>Skip for now</Text>
 
       <View style={{marginTop: responsive.number(50)}}>
-      <Button text="Verify"/>
+      <Button text="Verify" onPress={() => handleVerify}/>
       </View>
       
     </View>
