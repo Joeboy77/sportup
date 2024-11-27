@@ -6,6 +6,9 @@ import Home from './screens/onboards/Home';
 import Onboard from './screens/onboards/Onboard';
 import SignIn from './screens/auth/SignIn';
 import SignUp from './screens/auth/SignUp';
+import VerifyPhone from './screens/auth/VerifyPhone';
+import EmailVerification from './screens/auth/EmailVerification';
+import PhoneVerfication from './screens/auth/PhoneVerfication';
 
 const Stack = createStackNavigator()
 
@@ -41,6 +44,9 @@ export default function App() {
           <Stack.Screen name="Onboard" component={Onboard} />
           <Stack.Screen name='SignIn' component={SignIn} />
           <Stack.Screen name='SignUp' component={SignUp}/>
+          <Stack.Screen name='VerifyPhone' component={VerifyPhone}/>
+          <Stack.Screen name='EmailVerification' component={EmailVerification}/>
+          <Stack.Screen name='PhoneVerification' component={PhoneVerfication}/>
         </Stack.Navigator>
       </NavigationContainer>
       <StatusBar style="light" />

@@ -3,9 +3,9 @@ import React from 'react'
 import { responsive } from '../../shared/getResponsiveness'
 import { COLORS } from '../../hooks/Colors'
 
-export default function Button({text}) {
+export default function Button({text, onPress}) {
   return (
-    <TouchableOpacity style={styles.container}>
+    <TouchableOpacity style={styles.container} onPress={onPress}>
       <Text style={{color: COLORS.PRIMARY_TEXT, fontWeight: 'bold'}}>{text}</Text>
     </TouchableOpacity>
   )
