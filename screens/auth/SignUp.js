@@ -7,8 +7,10 @@ import AppleGoogle from '../../components/auth/AppleGoogle';
 import appleLogo from '../../assets/img/apple.png'
 import googleLogo from '../../assets/img/google.png'
 import Donot from '../../components/auth/Donot'
+import { useNavigation } from '@react-navigation/native';
 
 export default function SignUp() {
+    const navigation = useNavigation()
     const [username, setUsername] = useState("")
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
@@ -48,7 +50,7 @@ export default function SignUp() {
         />
       </View>
 
-      <Button text="Continue"/>
+      <Button text="Continue" onPress={() => navigation.navigate("VerifyPhone")}/>
 
       <OrSign />
 
