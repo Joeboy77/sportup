@@ -2,9 +2,9 @@ import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import React from 'react'
 import { responsive } from '../../shared/getResponsiveness'
 
-export default function Verifier({image, title, subTitle, backgroundColor, borderColor, color}) {
+export default function Verifier({image, title, subTitle, backgroundColor, borderColor, color, onPress}) {
   return (
-    <TouchableOpacity style={[styles.container, {borderColor, backgroundColor}]}>
+    <TouchableOpacity style={[styles.container, {borderColor, backgroundColor}]} onPress={onPress}>
       <Image source={image}/>
 
       <View style={{gap: 5}}>
