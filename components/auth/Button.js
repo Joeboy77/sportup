@@ -1,13 +1,13 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import React from 'react'
 import { responsive } from '../../shared/getResponsiveness'
 import { COLORS } from '../../hooks/Colors'
 
 export default function Button({text}) {
   return (
-    <View style={styles.container}>
+    <TouchableOpacity style={styles.container}>
       <Text style={{color: COLORS.PRIMARY_TEXT, fontWeight: 'bold'}}>{text}</Text>
-    </View>
+    </TouchableOpacity>
   )
 }
 

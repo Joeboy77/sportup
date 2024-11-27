@@ -1,8 +1,15 @@
 import { View, Text, StyleSheet, TextInput } from 'react-native'
+import { StatusBar } from 'expo-status-bar';
+
 import React, {useState} from 'react'
 import { responsive } from '../../shared/getResponsiveness'
 import ForgotPassword from '../../components/auth/ForgotPassword'
 import Button from '../../components/auth/Button'
+import OrSign from '../../components/auth/OrSign';
+import AppleGoogle from '../../components/auth/AppleGoogle';
+import appleLogo from '../../assets/img/apple.png'
+import googleLogo from '../../assets/img/google.png'
+import Donot from '../../components/auth/Donot';
 
 const SignIn = () => {
     const [email, setEmail] = useState('')
@@ -38,6 +45,22 @@ const SignIn = () => {
       <ForgotPassword />
 
       <Button text="Sign In"/>
+
+      <OrSign />
+
+      <View style={{display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between',
+        marginLeft: responsive.number(20), marginRight: responsive.number(20)
+      }}>
+      <AppleGoogle logo={appleLogo} text="Apple"/>
+      <AppleGoogle logo={googleLogo} text="Google"/>
+      </View>
+      
+      <View style={{marginTop: '50%'}}>
+      <Donot text="Sign Up"/>
+      </View>
+      
+
+      <StatusBar style="auto" />
     </View>
   )
 }
