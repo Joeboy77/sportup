@@ -3,9 +3,13 @@ import React, {useState} from 'react'
 import lock from '../../assets/img/lock.png'
 import { responsive } from '../../shared/getResponsiveness'
 import Button from '../../components/auth/Button'
+import { useNavigation } from '@react-navigation/native'
 
 export default function NewPassword() {
+    const navigation = useNavigation()
     const [password, setPassword] = useState('')
+
+    
   return (
     <View>
         <Image source={lock} style={styles.device}/>
