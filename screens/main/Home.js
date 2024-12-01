@@ -4,6 +4,8 @@ import notificationIcon from '../../assets/img/notification.png'
 import { responsive } from '../../shared/getResponsiveness'
 import { COLORS } from '../../hooks/Colors'
 import flame from '../../assets/img/flame.png'
+import TrendingPlanCard from '../../components/main/home/TrendingPlanCard'
+import trend1 from '../../assets/img/trend1.png'
 
 export default function HomeMain() {
     const name = "Joe"
@@ -19,10 +21,12 @@ export default function HomeMain() {
         <Image source={notificationIcon}/>
       </View>
 
-      <View style={{display: 'flex', flexDirection: 'row', alignItems: 'center', gap: 5, marginLeft: responsive.number(20), marginTop: responsive.number(40)}}>
+      <View style={{display: 'flex', flexDirection: 'row', alignItems: 'center', gap: 5, marginLeft: responsive.number(20), marginTop: responsive.number(30)}}>
         <Text style={{fontSize: responsive.number(16), fontWeight: 'bold'}}>Trending Plan</Text>
         <Image source={flame}/>
       </View>
+
+      <TrendingPlanCard backgroundImage={trend1} head="Massive Upper Body"/>
     </View>
   )
 }
