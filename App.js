@@ -11,6 +11,7 @@ import EmailVerification from './screens/auth/EmailVerification';
 import PhoneVerfication from './screens/auth/PhoneVerfication';
 import ForgotPassword from './screens/auth/ForgotPassword';
 import NewPassword from './screens/auth/NewPassword';
+import HomeMain from './screens/main/Home';
 
 
 const Stack = createStackNavigator()
@@ -52,6 +53,7 @@ export default function App() {
           <Stack.Screen name='PhoneVerification' component={PhoneVerfication}/>
           <Stack.Screen name='ForgotPassword' component={ForgotPassword}/>
           <Stack.Screen name='NewPassword' component={NewPassword} />
+          <Stack.Screen name='HomeMain' component={HomeMain}/>
           
         </Stack.Navigator>
       </NavigationContainer>
