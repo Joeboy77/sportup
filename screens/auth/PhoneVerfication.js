@@ -4,6 +4,7 @@ import PhoneInput from 'react-native-phone-number-input'
 import device from '../../assets/img/device.png'
 import { responsive } from '../../shared/getResponsiveness'
 import Button from '../../components/auth/Button'
+import { useNavigation } from '@react-navigation/native'
 
 export default function PhoneVerfication() {
     const [phoneNumber, setPhoneNumber] = useState('')
@@ -13,6 +14,9 @@ export default function PhoneVerfication() {
     const handleVerify = () => {
         navigation.navigate('CodeVerificationPage', { phoneNumber: formattedPhoneNumber });
       };
+
+      
+
 
   return (
     <View>

@@ -3,9 +3,12 @@ import React, {useState} from 'react'
 import mail from '../../assets/img/mail.png'
 import { responsive } from '../../shared/getResponsiveness'
 import Button from '../../components/auth/Button'
+import { useNavigation } from '@react-navigation/native'
 
 export default function EmailVerification() {
     const [email, setEmail] = useState('')
+
+    const navigation = useNavigation()
   return (
     <View>
       <Image source={mail} style={styles.device}/>
@@ -23,7 +26,7 @@ export default function EmailVerification() {
       />
 
       <View style={{marginTop: '25%'}}> 
-        <Button text="Verify"/>
+        <Button text="Verify" onPress={() => navigation.navigate("HomeMain")}/>
       </View>
     </View>
   )

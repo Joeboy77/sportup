@@ -10,10 +10,17 @@ import AppleGoogle from '../../components/auth/AppleGoogle';
 import appleLogo from '../../assets/img/apple.png'
 import googleLogo from '../../assets/img/google.png'
 import Donot from '../../components/auth/Donot';
+import { useNavigation } from '@react-navigation/native';
 
 const SignIn = () => {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
+
+    const navigation = useNavigation()
+
+    const handleSignIn = () => {
+      navigation.navigate('HomeMain')
+    }
   return (
     <View style={styles.container}>
       <Text style={styles.sign}>Sign In</Text>
@@ -44,7 +51,7 @@ const SignIn = () => {
 
       <ForgotPassword />
 
-      <Button text="Sign In"/>
+      <Button text="Sign In" onPress={handleSignIn}/>
 
       <OrSign />
 
