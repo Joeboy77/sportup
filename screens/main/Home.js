@@ -8,6 +8,9 @@ import TrendingPlanCard from '../../components/main/home/TrendingPlanCard'
 import trend1 from '../../assets/img/trend1.png'
 import trend2 from '../../assets/img/trend2.jpg'
 import trend3 from '../../assets/img/trend3.jpg'
+import TrainerCard from '../../components/main/home/TrainerCard'
+import trainer1 from '../../assets/img/trainer1.png'
+import trainer2 from '../../assets/img/trainer2.png'
 
 export default function HomeMain() {
     const name = "Joe"
@@ -71,6 +74,18 @@ export default function HomeMain() {
         contentContainerStyle={styles.trendList}
         
       />
+
+      <View style={styles.trainers}>
+        <Text style={{fontSize: responsive.fontSize(18), fontWeight: 'bold'}}>Pro trainers</Text>
+        <Text style={{fontSize: responsive.fontSize(14), color: 'blue', fontWeight: '600'}}>View All</Text>
+      </View>
+
+      <View style={{display: 'flex', flexDirection: 'row', marginLeft: responsive.number(20), marginRight: responsive.number(20), justifyContent: 'space-between', marginTop: responsive.number(20)}}>
+      <TrainerCard background={trainer1} job="Fitness Expert" name="Marvin McKinney"/>
+      <TrainerCard background={trainer2} job="Fitness Model" name="Ester Howard"/>
+      </View>
+
+      
     </View>
   )
 }
@@ -78,7 +93,7 @@ export default function HomeMain() {
 const styles = StyleSheet.create({
     container: {
         backgroundColor: COLORS.PRIMARY_TEXT,
-        flex: 1
+        
     },
     header: {
         marginTop: responsive.number(70),
@@ -102,5 +117,14 @@ const styles = StyleSheet.create({
       paddingHorizontal: responsive.number(20),
       marginTop: responsive.number(15),
       gap: responsive.number(10)
+    },
+    trainers: {
+      marginTop: responsive.number(30),
+      marginLeft: responsive.number(20),
+      marginRight: responsive.number(20),
+      display: 'flex',
+      flexDirection: 'row',
+      alignItems: 'center',
+      justifyContent: 'space-between'
     }
 })
