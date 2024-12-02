@@ -3,18 +3,31 @@ import React from 'react'
 import { responsive } from '../../../shared/getResponsiveness'
 import { COLORS } from '../../../hooks/Colors'
 import gymIcon from '../../../assets/img/gymIcon.png'
+import dot from '../../../assets/img/eclipse.png'
+import StartButton from './StartButton'
 
-export default function TrendingPlanCard({backgroundImage, head}) {
+export default function TrendingPlanCard({backgroundImage, head, weeks, times}) {
   return (
     <TouchableOpacity style={{borderRadius: 12, width: responsive.number(301), height: responsive.number(174), overflow: 'hidden'}}>
       <ImageBackground source={backgroundImage} style={styles.container}>
         <Text style={styles.head}>{head}</Text>
 
-        <View>
-            <View>
+        <View style={{display: 'flex',
+          flexDirection: 'row', alignItems: 'center', gap: responsive.number(8), marginLeft: responsive.number(15), marginTop: responsive.number(8)
+        }}>
+            <View style={{flexDirection: 'row', alignItems: 'center', gap: responsive.number(2)}}>
                 <Image source={gymIcon}/>
+                <Text style={{color: COLORS.PRIMARY_TEXT, fontSize: responsive.fontSize(12)}}>{weeks}</Text>
             </View>
+            <View style={{flexDirection: 'row', alignItems: 'center', gap: responsive.number(5)
+            }}>
+              <Image source={dot}/>
+              <Text style={{color: COLORS.PRIMARY_TEXT}}>{times}</Text>
+            </View>
+            
         </View>
+
+        <StartButton start="Start"/>
       </ImageBackground>
     </TouchableOpacity>
   )
@@ -31,6 +44,6 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         width: responsive.number(155),
         marginTop: responsive.number(20),
-        marginLeft: responsive.number(20)
+        marginLeft: responsive.number(15)
     }
 })
